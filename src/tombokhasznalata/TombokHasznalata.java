@@ -27,14 +27,17 @@ public class TombokHasznalata {
         //tomb = {"nulla", "egy", "kettő", "három"};
         
         /* tomb osztályban length elérhető adattag */
+        System.out.println("A tömb elemei:");
         for(int i = 0; i < tomb.length; i++){
+            /*d != java.lang.String IllegalFormatConversionException*/
+            //System.out.printf("[%d. index] = %d\n", i, tomb[i])
             System.out.printf("[%d. index]=%s\n", i, tomb[i]);
         }
         
         /* deklarálásnál a mérettel és késöbb feltöltve */
         /* mérete nem változhat, de új tömb lehet:  */
         tomb = new String[4]; //megadom az új méretet
-        System.out.println("az üres tömb: "); //minden elem értéke
+        System.out.println("az üres tömb: "); //minden elem értéke: null
         for(int i = 0; i < tomb.length; i++){
             System.out.printf("[%d. index]=%s\n", i, tomb[i]);
         }
@@ -45,10 +48,12 @@ public class TombokHasznalata {
             System.out.printf("[%d. index]=%s\n", i, tomb[i]);
         }
         
+        
         tomb[0] = "null";
         tomb[1] = "one";
         tomb[3] = "two";
-        //tomb[3] = "three";
+        /*ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4*/
+        //tomb[4] = "";
         System.out.println("vegyesen feltöltött tömb: ");
         for(int i = 0; i < tomb.length; i++){
             System.out.printf("[%d. index]=%s\n", i, tomb[i]);
@@ -72,13 +77,7 @@ public class TombokHasznalata {
         
         /* le sem fordítható: */
         /* ÉRTÉK == REFERENCIA */
-        /* if("null" == null) */
-        
-        /*2 tömbbe tároljuk az adatokat, egyikbe korok, másikba nevek, 3 db*/
-        tomb[0] = "Isti";
-        tomb[1] = "Boti";
-        tomb[2] = "Szendy";
-        
+        /* if(0 == null) */
         
     }
     
